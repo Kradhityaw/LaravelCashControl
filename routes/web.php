@@ -32,6 +32,10 @@ Route::middleware('auth')->group(function () {
 // Authentication
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login')->middleware('guest');
 Route::post('/loginProcess', [AuthController::class, 'loginProcess'])->name('proses-login');
+Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+Route::post('/registerProcess', [AuthController::class, 'registerProcess'])->name('process-register');
+Route::get('/setup', [AuthController::class, 'showSetup'])->name('setup');
+Route::post('/setupProcess/{id}', [AuthController::class, 'setupProcess'])->name('process-setup');
 Route::post('/logout', [AuthController::class, 'logout'])->name('proses-logout');
 
 // Group
@@ -39,3 +43,4 @@ Route::get('/group', [GroupController::class, 'index'])->name('group-view');
 
 // Test (Experimental)
 Route::get('/test', [TransaksiController::class, 'test']);
+

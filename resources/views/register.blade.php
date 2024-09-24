@@ -5,7 +5,7 @@
         <div class="row p-5 rounded border-dark-subtle"
             style="backdrop-filter: blur(3px); background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));">
             <div class="col d-flex justify-content-center flex-column">
-                <h1 class="fs-1 text-white mb-3">Login CashControl</h1>
+                <h1 class="fs-1 text-white mb-3">Daftar CashControl</h1>
                 <p class="fs-5 text-white">Atur keuangan anda dengan mudah dan rapi, dengan CashControl seluruh masalah
                     keuangan
                     anda bisa
@@ -14,10 +14,10 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header fs-3 text-black fw-semibold">
-                        Login
+                        Register
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('proses-login') }}" method="POST">
+                        <form action="{{ route('process-register') }}" method="POST">
                             @csrf
                             @if ($errors->any())
                                 <div class="alert alert-danger alert-dismissible" role="alert">
@@ -28,15 +28,14 @@
                             @endif
                             <div class="mb-3">
                                 <label for="" class="form-label">Email</label>
-                                <input type="email" id="email" class="form-control" name="email"
-                                    value="kevind@gmail.com">
+                                <input type="email" id="email" class="form-control" name="email">
                             </div>
                             <div class="mb-3">
                                 <label for="" class="form-label">Password</label>
-                                <input type="password" class="form-control" name="password" value="12345678">
+                                <input type="password" class="form-control" name="password">
                             </div>
                             <button type="submit" class="btn btn-primary w-100 mt-2 mb-3">Login</button>
-                            <label for="">Belum Punya akun? <a href="{{ route('register') }}">Daftar sekarang!</a></label>
+                            <label for="">Sudah Punya akun? <a href="{{ route('login') }}">Masuk sekarang!</a></label>
                         </form>
                     </div>
                 </div>
