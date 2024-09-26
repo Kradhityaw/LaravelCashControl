@@ -34,8 +34,8 @@ Route::get('/login', [AuthController::class, 'showLogin'])->name('login')->middl
 Route::post('/loginProcess', [AuthController::class, 'loginProcess'])->name('proses-login');
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
 Route::post('/registerProcess', [AuthController::class, 'registerProcess'])->name('process-register');
-Route::get('/setup', [AuthController::class, 'showSetup'])->name('setup');
-Route::post('/setupProcess/{id}', [AuthController::class, 'setupProcess'])->name('process-setup');
+Route::get('/setup/{id}', [AuthController::class, 'showSetup'])->name('setup');
+Route::post('/setup/{id}', [AuthController::class, 'setupProcess'])->name('process-setup');
 Route::post('/logout', [AuthController::class, 'logout'])->name('proses-logout');
 
 // Group

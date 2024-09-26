@@ -17,7 +17,7 @@
                         Setup
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('process-setup', ) }}" method="POST">
+                        <form action="" method="POST">
                             @csrf
                             @if ($errors->any())
                                 <div class="alert alert-danger alert-dismissible" role="alert">

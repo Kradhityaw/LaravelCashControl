@@ -52,7 +52,7 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ])) {
-            $find = User::find(Auth::user()->id);
+            $find = User::find(Auth::user()->id)['id'];
             
             // $makeGroup = Group::create([
             //     'nama' => $request->name . 'Group',
@@ -66,7 +66,7 @@ class AuthController extends Controller
             //     'role_id' => 1
             // ]);
 
-            return redirect('/setup')->with('data', $find)->with('success', 'Akun Berhasil Dibuat');
+            return redirect("/setup/$find")->with('data', $find)->with('success', 'Akun Berhasil Dibuat');
         } else {
             return redirect()->back()->withErrors('Email atau password salah');
         }
